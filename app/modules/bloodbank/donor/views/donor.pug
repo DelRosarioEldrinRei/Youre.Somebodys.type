@@ -1,0 +1,23 @@
+extends ../../../../templates/bloodbank/adddonor
+
+block content
+    h1.title
+        span.fa(class= user ? 'fa-user' : 'fa-user-plus')
+        | &nbsp; #{user ? 'Edit': 'Add'} DONOR
+    
+    form(method="POST" action=`/bloodbank/donor/adddonor`)
+        .field
+            .label Donor Name
+            .control    
+                    select.input(name="donor")     
+                        each person in tblperson     
+                            option(value= person.intPERSON_ID)= person.strPERSON_LN + ',' +person.strPERSON_FN+' ' +person.strPERSON_MN
+        .field
+            .label Blood Type
+            .control    
+                    select.input(name="type")     
+                        each types in tblbloodtype     
+                            option(value= types.intBLOODTYPE_ID)= types.strBLOODTYPE_DESCRIPTION
+        
+        input.button.is-primary(type="submit" value="Submit")
+    br

@@ -1,0 +1,25 @@
+extends ../../../../templates/personnav/post
+
+block content
+    h1.title
+        span.fa(class= user ? 'fa-user' : 'fa-user-plus')
+        | &nbsp; #{user ? 'Edit': 'Add'} Post
+    form(method="POST" action=`newpost${post ? `${post.intPOST_ID}?_method=POST` : ''}`)
+        .field
+            .label Blood Component
+            .control
+                    select.input(name="component")     
+                        each component in tblbloodcomponent  
+                            option(value= component.intBLOODCOMPONENT_ID)= component.strBLOODCOMPONENT_DESCRIPTION
+        .field
+            .label Blood Type
+            .control
+                select.input(name="type")     
+                        each types in tblbloodtype  
+                            option(value= types.intBLOODTYPE_ID)= types.strBLOODTYPE_DESCRIPTION
+        .field
+            .label Content
+            .control
+                input.input(type="text" name="content" value= post ? post.strPOST_CONTENT : '' required)
+        input.button.is-primary(type="submit" value="Submit")
+    br

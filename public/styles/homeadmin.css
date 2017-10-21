@@ -1,0 +1,46 @@
+
+a
+{
+    height: 50px;
+}
+.button
+{
+    background-color: #752828;
+    color: #fff;
+    border: none;
+}
+a.button 
+{
+    
+    color: #fff;
+    border: none;
+    text-decoration: none;
+}
+.button:hover
+{
+    background-color: darkred;
+    color: #fff;
+    border: none;
+}
+.container1 {
+    background-color:crimson;
+
+}
+.container {
+    width: 50%;
+    height:430px;
+    background: url('/assets/blurredred.png') repeat fixed 100%;
+    text-align: left;
+    border: 12px solid #B22222;
+    border-radius: 10px;
+}
+.label {
+    color: #FFFFFF;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+}
+.space {
+    background-color: white;
+    margin: 10px 0 10px 0;
+    padding: 0px;
+}
